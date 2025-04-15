@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Mobile UI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #5c6bc0, #8e99f3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+      overflow: hidden;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Smooth Fade-In Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Logo Styling */
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.4s ease;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo:hover {
+      transform: rotate(360deg);
+    }
+
+    /* App Grid */
+    .home-screen {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 500px;
+    }
+
+    /* App Icon Styling */
+    .app-icon {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(45deg, #ff4081, #ff80ab);
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      transform: scale(1);
+    }
+
+    .app-icon img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(45deg, #ff80ab, #ff4081); /* Hover color flip */
+    }
+
+    .app-icon:hover img {
+      transform: rotate(360deg);
+    }
+
+    /* App Name Styling */
+    .app-name {
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 480px) {
+      .app-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 12px;
+      }
+
+      .app-icon img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .logo {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    /* Background gradient */
+    .background {
+      background: linear-gradient(145deg, #6a4c93, #4f2f74);
+      padding: 10px;
+      border-radius: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Mobile UI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #5c6bc0, #8e99f3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+      overflow: hidden;
+      animation: fadeIn 2s ease;
+      background-image: url('https://i.ibb.co/jkRq9QHx/Screenshot-2025-04-15-152514.png');
+    }
+
+    /* Smooth Fade-In Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Logo Styling */
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.4s ease;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo:hover {
+      transform: rotate(360deg);
+    }
+
+    /* App Grid */
+    .home-screen {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 500px;
+    }
+
+    /* App Icon Styling */
+    .app-icon {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(45deg, #ff4081, #ff80ab);
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      transform: scale(1);
+    }
+
+    .app-icon img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(45deg, #ff80ab, #ff4081); /* Hover color flip */
+    }
+
+    .app-icon:hover img {
+      transform: rotate(360deg);
+    }
+
+    /* App Name Styling */
+    .app-name {
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 480px) {
+      .app-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 12px;
+      }
+
+      .app-icon img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .logo {
+        width: 90px;
+        height: 90px;
+      }
+    }
+    /* Loading Screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  opacity: 1;
+  animation: fadeOut 3s ease-out forwards;
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* Spinner Animation */
+.spinner {
+  border: 8px solid #f3f3f3; /* Light gray */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner Rotation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+    /* Background gradient */
+    .background {
+      background: linear-gradient(145deg, #6a4c93, #4f2f74);
+      padding: 10px;
+      border-radius: 30px;
+    }
+    .app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0 5px;
+  z-index: 999;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.footer-link {
+  color: #999;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover,
+.footer-link.active {
+  color: #00bcd4;
+  font-weight: bold;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="home-screen">
+    <a href="https://www.iare.ac.in/"><div class="app-icon" style="animation-delay: 0.1s;">
+      <img src="https://i.ibb.co/mVpDw4yN/iare-logo.jpg" alt="Chat" border-radius="50%">
+      <div class="app-name">IARE</div>
+    </div></a>
+    <a href="https://samvidha.iare.ac.in/"><div class="app-icon" style="animation-delay: 0.2s;">
+      <img src="https://i.ibb.co/twKBgndB/samvidha1-banner.jpg" alt="Chat">
+      <div class="app-name">Samvidha</div>
+    </div></a>
+    <a href="https://www.google.co.in/"><div class="app-icon" style="animation-delay: 0.3s;">
+      <img src="https://img.icons8.com/color/48/internet--v1.png" alt="Browser">
+      <div class="app-name"> Chrome Browser</div>
+    </div></a>
+    <a href="https://resourcebase.in/"><div class="app-icon" style="animation-delay: 0.4s;">
+      <img src="https://i.ibb.co/ZRRWdzHY/Screenshot-2025-04-15-142943.png" alt="Chat">
+      <div class="app-name">Resource Base</div>
+    </div></a>
+  
+   <a href="https://www.iare.ac.in/?q=pages/iare-academic-calendar"><div class="app-icon" style="animation-delay: 0.5s;">
+      <img src="https://img.icons8.com/color/48/calendar--v1.png" alt="Calendar">
+      <div class="app-name">Event Calendar</div>
+    </div></a>
+    <a href="https://chatgpt.com/"><div class="app-icon" style="animation-delay: 0.6s;">
+      <img src="https://i.ibb.co/pvqJmVHK/chatgpt.jpg" alt="Chat">
+      <div class="app-name">Chat GPT</div>
+    </div></a>
+    <a href="https://chat.deepseek.com/"><div class="app-icon" style="animation-delay: 0.7s;">
+      <img src="https://i.ibb.co/JW2VCfNw/deepseek-jpg.webp" alt="Chat">
+      <div class="app-name">DeepSeek</div>
+    </div></a>
+    <!-- Add more icons using the same pattern -->
+  </div>
+ 
+
+  <div class="dock">
+    <div class="dock-icon"><i class="fas fa-phone"></i></div>
+    <div class="dock-icon"><i class="fas fa-home"></i></div>
+    <div class="dock-icon"><i class="fas fa-search"></i></div>
+  </div>
+  <script>
+  function showLoader() {
+  document.querySelector('.loading-screen').style.display = 'flex'; // Show the loader
+}
+
+function hideLoader() {
+  document.querySelector('.loading-screen').style.display = 'none'; // Hide the loader
+}
+
+  </script>
+</body>
+<footer class="app-footer">
+
+  <div class="footer-copy">
+    &copy; 2025 StudentIARE. All rights reserved.
+  </div>
+</footer>
+
+</html>
+
+</body>
+</html>
